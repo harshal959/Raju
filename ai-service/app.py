@@ -25,7 +25,10 @@ def scrape_product():
 @app.route('/products', methods=['GET'])
 def get_products():
     try:
+        category = request.args.get('category')
         data = scraper.get_trending_products()
+        if category:
+            data = [p for p in data if p.get('category', '').lower() == category.lower()]
         return jsonify(data)
     except Exception as e:
         return jsonify({"error": str(e)}), 500
