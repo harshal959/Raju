@@ -7,12 +7,13 @@ __pycache__/
 
 # Environment Files
 .env
-.env.local
+.env*.local
 .DS_Store
 
 # Build Output
 dist/
 build/
+.next/
 *.log
 
 # IDE
@@ -21,3 +22,10 @@ build/
 
 # Custom
 query
+
+# v0 runtime files
+__v0_runtime_loader.js
+__v0_devtools.tsx
+__v0_jsx-dev-runtime.ts
+instrumentation-client.js
+instrumentation-client.ts
